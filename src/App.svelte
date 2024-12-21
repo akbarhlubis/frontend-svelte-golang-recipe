@@ -1,13 +1,21 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+import Layout from "./lib/components/Layout.svelte";
+import Login from "./lib/pages/auth/Login.svelte";
+import Register from "./lib/pages/auth/Register.svelte";
+import Landing from "./lib/pages/Landing.svelte";
 
-  const wow = 12+2;
+let component = Landing;
 </script>
 
 <main>
-<h1>Persatuan Bangsa</h1>
+  <nav>
+    <button on:click={() => (component = Landing)}>Landing Page</button>
+    <button on:click={() => (component = Login)}>Login</button>
+    <button on:click={() => (component = Register)}>Register</button>
+  </nav>
+<Layout>
+  <svelte:component this={component}/>
+</Layout>
 </main>
 
 <style>
