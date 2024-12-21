@@ -1,21 +1,17 @@
 <script>
-import Layout from "./lib/components/Layout.svelte";
-import Login from "./lib/pages/auth/Login.svelte";
-import Register from "./lib/pages/auth/Register.svelte";
-import Landing from "./lib/pages/Landing.svelte";
+  import Router, {link,location} from "svelte-spa-router";
+  import { routes } from "./routes";
 
-let component = Landing;
 </script>
 
 <main>
   <nav>
-    <button on:click={() => (component = Landing)}>Landing Page</button>
-    <button on:click={() => (component = Login)}>Login</button>
-    <button on:click={() => (component = Register)}>Register</button>
+    <a href="/" use:link>Landing Page</a>
+    <a href="/login" use:link>Login</a>
+    <a href="/register" use:link>Register</a>
+    <p>{$location}</p>
   </nav>
-<Layout>
-  <svelte:component this={component}/>
-</Layout>
+  <Router {routes}/>
 </main>
 
 <style>
