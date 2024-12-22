@@ -1,1 +1,1 @@
-Halo Halo, Landing Disini
+<h1 class="bg-red-400">Halo</h1>

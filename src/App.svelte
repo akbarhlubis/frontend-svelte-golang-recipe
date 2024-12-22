@@ -13,9 +13,3 @@
   </nav>
   <Router {routes}/>
 </main>
-
-<style>
-  *{
-    user-select: none;
-  }
-</style>
